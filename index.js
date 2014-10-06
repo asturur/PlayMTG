@@ -18,8 +18,9 @@ loginShow = function() {
 },
 
 register = function() {
-  $.post({
-    url: 'services/register.php',
+  $.ajax({
+    type: "POST",
+    url: "services/register.php",
     data: $("#registerForm").serialize(),
     success: function(data){
       console.debug('chiamato');
