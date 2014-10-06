@@ -2,8 +2,8 @@
 require "../include/database.php";
 require "../include/mail.class.php";
 
-$stmt=$mysql->prepare("INSERT INTO users (username, name, email, password) VALUES (?, ?, ?, ENCRYPT(?))");
-$stmt->bind_param('ssss', $_POST["username"], $_POST["nome"],  $_POST["email"], $_POST["password"]);
+$stmt=$mysql->prepare("INSERT INTO users (username, name, email, password, ip_address) VALUES (?, ?, ?, ENCRYPT(?), ?)");
+$stmt->bind_param('sssss', $_POST["username"], $_POST["nome"],  $_POST["email"], $_POST["password"], $_SERVER["REMOTE_ADDR"]);
 
 $risposta = array();
 
