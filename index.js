@@ -21,7 +21,7 @@ register = function() {
   $.ajax({
     type: 'POST',
     url: 'services/register.php',
-    data: $(''#registerForm').serialize(),
+    data: $('#registerForm').serialize(),
     success: function(data){
       console.debug('chiamato');
       alert(data);
