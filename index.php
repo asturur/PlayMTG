@@ -15,14 +15,15 @@
       Non hai un account ? <input type="button" value="Registrati ora" id="register2" />
     </form>
     <form onsubmit="return false" id="registerForm" >
-      <label >Nome:</label><input type="text" name="login" />
+      <label >Nome:</label><input type="text" name="nome" />
       <label >Email:</label><input type="text" name="email" />
       <label >Nome Utente:</label><input type="text" name="username" />
       <label >Password:</label><input type="password" name="password" />
       <input type="checkbox" value="1" name="checked" />
       <input type="button" value="Registrati" id="register" />
       hai un account ? <input type="button" value="Entra ora" id="login2" />
-    </form>    
+    </form>
+    <div id="message">ksjdghskjghskjd</div>   
   </body>
 </html>
 <?php ?>
