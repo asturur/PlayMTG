@@ -1,0 +1,47 @@
+.deck_button {
+  padding: 6px;
+  background-color: lightgrey;
+  border: 1px solid grey;
+  display: inline-block;
+  margin: 4px;
+  cursor: pointer;
+}
+
+.deck_button:hover {
+  padding: 6px;
+  background-color: red;
+  color: white;  
+}
+
+#deck_mod {
+  position:absolute;
+  width:500px;"
+}
+
+
+#deck_mod_title {
+  font-size: 24px;
+  text-align: center;
+  background: red;
+  color: white;
+}
+
+#tavolo {
+  width: 70%;
+  border: 1px solid black;
+  float: right;
+}
+
+#image_card {
+  width: 250px;
+  position: absolute;
+  right:2px;
+  top: 20px;
+}
+#image_card > img {
+  width: 95%
+}
+
+#image_card > button {
+  
+}
