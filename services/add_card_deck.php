@@ -1,14 +1,7 @@
 <?php
 session_start();
 require "../include/database.php";
-if (!isset($_SESSION["u_id"])) {
-  $risposta["success"] = false;
-  $risposta["msg"] = "Non loggato";
-  echo json_encode($risposta);
-  exit;
-}
-$name = $_SESSION["name"];
-$u_id = $_SESSION["u_id"];
+require "sessione.php";
 
 // manca una funzione che verifica la validata di inserimento
 // secondo le regole di magic e del mazzo scelto
@@ -18,7 +11,18 @@ $stmt->bind_param('dd', $_POST["id_deck"], $_POST["id_card"]);
 $risposta = array();
 
 if ($stmt->execute()) {
-  $risposta["success"] = true;
+  $unique_id = $stmt->insert_id;
+  $stmt = $mysql->prepare("SELECT name, id FROM magic_cards WHERE id = ?");
+  $stmt->bind_param('d', $_POST["id_card"]);
+  $stmt->bind_result($card_name, $id);
+  if ($stmt->execute()) {
+    while($stmt->fetch()) {
+      $risposta["success"] = true;
+      $risposta["id_card"] =  $id;
+      $risposta["name"] =  $card_name;
+      $risposta["unique_id"] = $unique_id;
+    }
+  }
 } else {
   $risposta["success"] = false;
   $risposta["msg"] = $stmt->error;

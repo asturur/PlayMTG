@@ -15,7 +15,7 @@
 
 #deck_mod {
   position:absolute;
-  width:500px;"
+  width:800px;"
 }
 
 
@@ -25,17 +25,18 @@
   background: red;
   color: white;
 }
-
-#tavolo {
-  width: 70%;
-  border: 1px solid black;
+.canvas-container {
   float: right;
+}
+#tavolo, .tavolo {
+  position: inline-block;
+  border: 1px solid black;
 }
 
 #image_card {
   width: 250px;
   position: absolute;
-  right:2px;
+  right:310px;
   top: 20px;
 }
 #image_card > img {
@@ -44,4 +45,12 @@
 
 #image_card > button {
   
+}
+
+#contenuto {
+  display: inline-block;
+  position: absolute;
+  right: 2px;
+  width: 300px;
+  border: 1px solid blue;
 }

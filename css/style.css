@@ -1,11 +1,6 @@
-#loginForm, #registerForm {
-  display: none;
-}
-
-#message {
-  display: none;
-}
-
-#dialog {
-  display: none;
+@font-face {
+    font-family: 'magic';
+    src :url('./font/magic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }

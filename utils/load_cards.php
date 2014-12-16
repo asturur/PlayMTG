@@ -7,9 +7,9 @@
 // 128MB non sono abbastanza per un file JSON da 20 mb.
 // PREPARO LA CONNESSIONE AL DB
 require "../include/database.php";
-ini_set('memory_limit','256M');
+ini_set('memory_limit','384M');
 echo "Leggo file da 20MB \n";
-$stringona = file_get_contents("cards.json");
+$stringona = file_get_contents("cards2.json");
 echo "Tento la decodifica JSON";
 $card_array = json_decode($stringona);
 $qr="INSERT INTO cards ";
@@ -23,13 +23,16 @@ foreach($card_array as $key => $card) {
 			// non mi interessa fare sotto tabelle
 			$value = json_encode($value);
 		}
-		$part2 .= "'".$value."', ";
+		$part2 .= "'".addslashes($value)."', ";
 	}
 	$part1 = substr($part1,0,-2);
 	$part2 = substr($part2,0,-2);
 	$part1 .= ")";
 	$part2 .= ")";
-	echo "INSERISCO CARTA ".$card["id"]."\n";
-	mysql_query($qr.$part1.$part2,$con);
+	if (mysql_query($qr.$part1.$part2,$con)) {
+    echo "INSERISCO CARTA ".$card->id." ".$card->name."\n";
+  } else {
+    echo "**ERROR** ".$card->id." ".$card->name." ".mysql_error()."\n";
+  }
 }
 ?>

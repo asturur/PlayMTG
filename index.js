@@ -4,17 +4,19 @@ $(document).ready(function() {
   $("#register").click(register);
   $("#login2").click(loginShow);
   $("#login").click(login);
-  $("#loginForm").show();
+  //$("#loginForm").show();
 });
 
 var registerShow = function() {
-  $("#loginForm").hide();
-  $("#registerForm").show();
+  //$("#loginForm").hide();
+  //$("#registerForm").show();
+  $('.flip-container').toggleClass('hover');
 },
 
 loginShow = function() {
-  $("#loginForm").show();
-  $("#registerForm").hide();
+  //$("#loginForm").show();
+  //$("#registerForm").hide();
+  $('.flip-container').toggleClass('hover');
 },
 
 register = function() {
@@ -37,7 +39,8 @@ login = function() {
     data: $("#loginForm").serialize(),
     success: function(data){
       if (data.login === true) {
-        document.location.href = data.url;
+        $('.flip-container').toggleClass('login');
+        setTimeout(function(){document.location.href = data.url;}, 500);
       } else {
         $('#message').html(data.msg).show();
       }

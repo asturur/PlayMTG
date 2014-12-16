@@ -18,13 +18,11 @@ echo "</div>";
 ?>
 <div >
   <div id="deck_mod_title"></div>
-  <canvas id="tavolo"></canvas>
+  <canvas class="tavolo" id="tavolo"></canvas>
   <div id="deck_mod">
-  <button onclick="aggiungi_carta">Aggiungi</button>
-  <button onclick="rimuovi_carta">Rimuovi</button>
-  <button onclick="duplica_carta">Duplica</button>
+  <div id="contenuto"></div>
   <form name="ricerca" id="ricerca" onsubmit="return false" >
-  <input type="text" name="search" /><input type="button" onclick="avvia_ricerca()" value="cerca" />
+  <input type="text" name="search" id="search" /><input type="button" onclick="avvia_ricerca()" value="cerca" />
   <div id="search_result"></div>
   <div id="image_card">
     <img id="card" src="" /><br />
