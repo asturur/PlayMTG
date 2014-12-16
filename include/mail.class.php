@@ -53,14 +53,14 @@ class mia_mail {
 		$this->fineriga="\r\n";
 		$this->smtp_server="localhost";
 		$this->smtp_port="25";
-		$this->smtp_user="****";
-		$this->smtp_pass="****";
+		$this->smtp_user="*";
+		$this->smtp_pass="*";
 		$this->smtp_timeout="30";
-		$this->FromName="*****";
-		$this->From="****";
-		$this->ReplyTo="*****";
-		$this->ReplyToName="*****";
-		$this->ReturnPath="*****";
+		$this->FromName="*";
+		$this->From="*";
+		$this->ReplyTo="*";
+		$this->ReplyToName="*";
+		$this->ReturnPath="*";
 		$this->immaginefirma="";
 		$this->testofirma="";
 		$this->html_header="<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=ISO-8859-1\">\n</head>\n<body>";
@@ -347,7 +347,7 @@ class mia_mail {
 
 	
 	protected function createHeader() {
-		// non riesco a farlo in dichiarazione quindi me lo tengo cosÃ¬
+		// non riesco a farlo in dichiarazione quindi me lo tengo così
 		$this->header="";
 		$this->header.="MIME-Version: 1.0".$this->fineriga;
 		$this->first=true;
@@ -519,7 +519,7 @@ class mia_mail {
 	}	
 	
 	protected function createHeader() {
-		// non riesco a farlo in dichiarazione quindi me lo tengo cosÃ¬
+		// non riesco a farlo in dichiarazione quindi me lo tengo così
 		$this->header.="MIME-Version: 1.0".$this->fineriga;
 		$this->header.="Content-Type: ".$this->filetype."; method=REQUEST; charset=UTF-8;".$this->fineriga;
 		$this->header.="Content-transfer-encoding: 8BIT".$this->fineriga;
